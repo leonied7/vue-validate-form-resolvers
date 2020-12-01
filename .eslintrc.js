@@ -6,5 +6,10 @@ module.exports = {
   rules: {
     'prettier/prettier': 'error'
   },
-  extends: ['eslint:recommended', 'plugin:prettier/recommended']
+  extends: [
+    'eslint:recommended',
+    'plugin:vue/recommended',
+    'plugin:prettier/recommended',
+    'prettier/vue'
+  ]
 };

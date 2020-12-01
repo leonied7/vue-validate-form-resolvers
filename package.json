@@ -1,6 +1,6 @@
 {
   "name": "@vue-validate-form/resolvers",
-  "version": "0.0.3",
+  "version": "0.0.1",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "browser": "dist/index.umd.js",
@@ -28,6 +28,7 @@
     "eslint": "^7.12.1",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-vue": "^7.1.0",
     "prettier": "2.1.2",
     "rollup": "^2.32.1",
     "rollup-plugin-node-globals": "^1.4.0",
