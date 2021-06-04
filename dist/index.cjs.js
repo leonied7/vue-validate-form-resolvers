@@ -4,12 +4,12 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 const parseErrorSchema = (error) =>
   Array.isArray(error.inner) && error.inner.length
-    ? error.inner.reduce((previous, { path, message }) => {
-        previous[path] = message;
+    ? error.inner.reduce((previous, { path, message, type }) => {
+        previous[path] = { message, type };
         return previous;
       }, {})
     : {
-        [error.path]: error.message
+        [error.path]: { message: error.message, type: error.type }
       };
 
 const yupResolver = (schema) => async (values) => {
