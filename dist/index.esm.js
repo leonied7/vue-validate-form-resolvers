@@ -1,11 +1,15 @@
+function preparePath(path) {
+  return path.replace('[', '.').replace(']', '');
+}
+
 const parseErrorSchema = (error) =>
   Array.isArray(error.inner) && error.inner.length
     ? error.inner.reduce((previous, { path, message, type }) => {
-        previous[path] = { message, type };
+        previous[preparePath(path)] = { message, type };
         return previous;
       }, {})
     : {
-        [error.path]: { message: error.message, type: error.type }
+        [preparePath(error.path)]: { message: error.message, type: error.type }
       };
 
 const yupResolver = (schema) => async (values) => {

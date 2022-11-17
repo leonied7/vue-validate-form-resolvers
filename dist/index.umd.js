@@ -1,6 +1,6 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('core-js/modules/es.array.reduce.js')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'core-js/modules/es.array.reduce.js'], factory) :
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('core-js/modules/es.regexp.exec.js'), require('core-js/modules/es.string.replace.js'), require('core-js/modules/es.array.reduce.js')) :
+  typeof define === 'function' && define.amd ? define(['exports', 'core-js/modules/es.regexp.exec.js', 'core-js/modules/es.string.replace.js', 'core-js/modules/es.array.reduce.js'], factory) :
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.VueValidateFormResolvers = {}));
 }(this, (function (exports) { 'use strict';
 
@@ -819,17 +819,21 @@
   }
   });
 
+  function preparePath(path) {
+    return path.replace('[', '.').replace(']', '');
+  }
+
   var parseErrorSchema = function parseErrorSchema(error) {
     return Array.isArray(error.inner) && error.inner.length ? error.inner.reduce(function (previous, _ref) {
       var path = _ref.path,
           message = _ref.message,
           type = _ref.type;
-      previous[path] = {
+      previous[preparePath(path)] = {
         message: message,
         type: type
       };
       return previous;
-    }, {}) : _defineProperty({}, error.path, {
+    }, {}) : _defineProperty({}, preparePath(error.path), {
       message: error.message,
       type: error.type
     });
