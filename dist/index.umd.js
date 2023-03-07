@@ -828,15 +828,21 @@
       var path = _ref.path,
           message = _ref.message,
           type = _ref.type;
-      previous[preparePath(path)] = {
+      var preparedPath = preparePath(path);
+
+      if (!previous[preparedPath]) {
+        previous[preparedPath] = [];
+      }
+
+      previous[preparedPath].push({
         message: message,
         type: type
-      };
+      });
       return previous;
-    }, {}) : _defineProperty({}, preparePath(error.path), {
+    }, {}) : _defineProperty({}, preparePath(error.path), [{
       message: error.message,
       type: error.type
-    });
+    }]);
   };
 
   var yupResolver = function yupResolver(schema) {
