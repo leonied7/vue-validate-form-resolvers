@@ -1,16 +1,13 @@
 import type { Schema, ValidationError } from 'yup';
 
+import type { Resolver, ResolverResult, Errors } from './resolver';
+
 function preparePath (path: string): string {
   return path.replace('[', '.').replace(']', '');
 }
 
-interface Error {
-  message: string
-  type?: string
-}
-
-const parseErrorSchema = (error: ValidationError): Record<string, Error[]> => {
-  const errors: Record<string, Error[]> = {};
+const parseErrorSchema = (error: ValidationError): Errors => {
+  const errors: Errors = {};
   return Array.isArray(error.inner) && (error.inner.length > 0)
     ? error.inner.reduce((previous, { path, message, type }) => {
       const preparedPath = preparePath(path ?? '');
@@ -25,7 +22,7 @@ const parseErrorSchema = (error: ValidationError): Record<string, Error[]> => {
       };
 };
 
-export const yupResolver = (schema: Schema) => async (values: unknown) => {
+export const yupResolver = (schema: Schema): Resolver => async (values: unknown): Promise<ResolverResult> => {
   try {
     return {
       values: await schema.validate(values, { abortEarly: false }),
