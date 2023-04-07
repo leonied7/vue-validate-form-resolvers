@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/leonied7/vue-validate-form-resolvers/compare/v0.0.5...v0.1.0) (2023-04-07)
+
+
+### Features
+
+* change errors format ([4a76728](https://github.com/leonied7/vue-validate-form-resolvers/commit/4a7672893de0528ef56466c98ff1e34b9bb78500))
+* migrate to vite/ts ([721b34b](https://github.com/leonied7/vue-validate-form-resolvers/commit/721b34bb2c49b038a5cfe80b214b3a5edaed1cec))
+
+
+### Bug Fixes
+
+* fix workflow ([a25bbd7](https://github.com/leonied7/vue-validate-form-resolvers/commit/a25bbd795b86edf1f8aad7a4b7ced1b427f38b3d))
+
 ### [0.0.5](https://github.com/leonied7/vue-validate-form-resolvers/compare/v0.0.4...v0.0.5) (2023-03-07)
 
 ### [0.0.4](https://github.com/leonied7/vue-validate-form-resolvers/compare/v0.0.3...v0.0.4) (2022-11-17)
