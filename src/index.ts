@@ -1,0 +1,1 @@
+export { yupResolver } from './yup';

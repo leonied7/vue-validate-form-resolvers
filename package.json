@@ -1,11 +1,18 @@
 {
   "name": "@vue-validate-form/resolvers",
   "version": "0.0.5",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
-  "browser": "dist/index.umd.js",
-  "publishConfig": {
-    "access": "public"
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/vue-validate-form-resolvers.cjs",
+  "module": "./dist/vue-validate-form-resolvers.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-validate-form-resolvers.js",
+      "require": "./dist/vue-validate-form-resolvers.umd.cjs"
+    }
   },
   "repository": "https://github.com/leonied7/vue-validate-form-resolvers.git",
   "author": {
@@ -17,34 +24,22 @@
     "url": "https://github.com/leonied7/vue-validate-form-resolvers/issues"
   },
   "homepage": "https://github.com/leonied7/vue-validate-form-resolvers#readme",
-  "dependencies": {},
-  "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/plugin-transform-runtime": "^7.12.1",
-    "@babel/preset-env": "^7.2.3",
-    "@rollup/plugin-babel": "^5.2.1",
-    "@rollup/plugin-commonjs": "^16.0.0",
-    "@rollup/plugin-node-resolve": "^10.0.0",
-    "eslint": "^7.12.1",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-vue": "^7.1.0",
-    "prettier": "2.1.2",
-    "rollup": "^2.32.1",
-    "rollup-plugin-node-globals": "^1.4.0",
-    "standard-version": "^9.0.0"
-  },
   "scripts": {
-    "build": "rollup -c",
-    "lint": "eslint src/** *.js",
-    "release": "standard-version -a"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
-  "standard-version": {
-    "scripts": {
-      "postchangelog": "yarn lint && yarn build && git add dist"
-    }
-  },
-  "files": [
-    "dist"
-  ]
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "eslint": "^8.37.0",
+    "eslint-config-standard-with-typescript": "^34.0.1",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "typescript": "^5.0.3",
+    "vite": "^4.2.0",
+    "vite-plugin-dts": "^2.2.0",
+    "yup": "^1.0.2"
+  }
 }
