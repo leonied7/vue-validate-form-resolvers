@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.2](https://github.com/leonied7/vue-validate-form-resolvers/compare/v1.0.1...v1.0.2) (2023-04-07)
+
+
+### Bug Fixes
+
+* npm publish correctly ([75c17d4](https://github.com/leonied7/vue-validate-form-resolvers/commit/75c17d469c27c302a07e16e2b317acbb4cc90792))
+
 ## [1.0.1](https://github.com/leonied7/vue-validate-form-resolvers/compare/v1.0.0...v1.0.1) (2023-04-07)
 
 
