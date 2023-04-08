@@ -12,6 +12,7 @@ module.exports = {
     project: ['./tsconfig.json']
   },
   rules: {
+    "semi": ["error", 'always'],
     "@typescript-eslint/semi": ["error", 'always'],
     "@typescript-eslint/triple-slash-reference": 'off'
   },
