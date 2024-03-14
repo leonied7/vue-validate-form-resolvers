@@ -30,7 +30,7 @@ export const yupResolver = (schema: Schema): Resolver => async (values: unknown)
     };
   } catch (e) {
     return {
-      values: {},
+      values,
       errors: parseErrorSchema(e as ValidationError)
     };
   }
