@@ -11,7 +11,7 @@
   "exports": {
     ".": {
       "import": "./dist/vue-validate-form-resolvers.js",
-      "require": "./dist/vue-validate-form-resolvers.umd.cjs"
+      "require": "./dist/vue-validate-form-resolvers.cjs"
     }
   },
   "repository": "https://github.com/leonied7/vue-validate-form-resolvers.git",
